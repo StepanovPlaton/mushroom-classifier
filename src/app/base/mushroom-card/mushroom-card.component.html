@@ -1,0 +1,39 @@
+<ion-card class="card">
+  <div [ngClass]="{ 
+    'image_wrapper': !!mushroom, 
+    'image_notfound_wrapper': !mushroom 
+  }">
+    <img 
+      class="image__mushroom" 
+      [ngClass]="{
+        'image__mushroom_notfound' : !mushroom
+      }"
+      [src]="!!mushroom ? mushroom.mainPicture : MUSHROOM"
+    />
+    <img 
+      class="image__notfound"
+      *ngIf="!mushroom" 
+      [src]="NOTFOUND"
+    />
+  </div>
+  <ion-card-header class="header" >
+    <ion-card-title class="header__title">
+      {{ !!mushroom ? mushroom.name : ("Mushroom not found" | translate) }}
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content *ngIf="!!mushroom" class="content">
+    <span *ngIf="size !== 'small'" class="item">
+      {{ "Eatable" | translate }}:
+      <img
+        class="eatable_image" 
+        [src]="mushroom.eatable ? CHECK : CROSS"
+      />
+    </span>
+    <br>
+    <span *ngIf="mushroom.description && size === 'large'" class="item">
+        {{ "Description" | translate }}: 
+        {{ mushroom.description }}
+    </span>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,15 @@
+{
+    "Main": "Главная",
+    "Recognize": "Распознать",
+    "Catalog": "Каталог",
+    "Recognize mushroom": "Распознать гриб",
+    "Mushroom not found": "Гриб не найден",
+    "Select file": "Выбрать файл",
+    "Upload a photo of a mushroom to recognize it": "Загрузите фотографию гриба, что бы его распознать",
+    "Too many files. Choose one photo": "Слишком много файлов. Выберите одну фотографию",
+    "File size is too large": "Размер файла слишком большой",
+    "Failed to upload file": "Не удалось загрузить файл",
+    "Loading": "Загрузка",
+    "Description": "Описание",
+    "Eatable": "Съедобен"
+}

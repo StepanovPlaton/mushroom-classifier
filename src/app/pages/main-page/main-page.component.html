@@ -1,0 +1,30 @@
+<section class="main-page_wrapper">
+  <div class="content">
+    <div class="content__cards">
+      <div class="card card_left">
+        <app-mushroom-card
+          size="medium"
+          [mushroom]="mushroom"
+        ></app-mushroom-card>
+      </div>
+      <div class="card card_right">
+        <app-mushroom-card
+          size="medium"
+          [mushroom]="mushroom"
+        ></app-mushroom-card>
+      </div>
+    </div>
+    <div class="recognize_block">
+      <ion-button 
+        size="large"
+        (click)="navigate(['recognize'])"
+        color="success"
+      >
+        {{ "Recognize mushroom" | translate }}
+      </ion-button>
+    </div>
+  </div>
+
+  <app-catalog></app-catalog>
+</section>
+

@@ -1,0 +1,58 @@
+<section class="recognize_wrapper">
+  <div class="recognize">
+    <div class="recognize__image">
+      <div class="dotted_border">
+        <div class="upload_welcome">
+          <h2 class="welcome">
+            {{ message | translate }}
+          </h2>
+          <ion-button 
+            color="success"
+            (click)="fileUpload.click()"
+          >
+            {{ "Select file" | translate }}
+          </ion-button>
+          <input 
+            #fileUpload
+            type="file" 
+            class="file_input"
+            (change)="onFileSelected($event)" 
+            [accept]="SUPPORTED_FILE_TYPES.toString()"
+          />
+
+          <h2 
+            class="warning"
+            *ngIf="warnings.fileLarge"
+          >
+            {{ "File size is too large" | translate }}
+          </h2>
+          <h2 
+            class="warning"
+            *ngIf="warnings.notOneFile"
+          >
+            {{ "Too many files. Choose one photo" | translate }}
+          </h2>
+          <h2 
+            class="warning"
+            *ngIf="warnings.uploadFail"
+          >
+            {{ "Failed to upload file" | translate }}
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="recognize__result">
+      <ion-content class="results">
+        <div class="result">
+          <app-mushroom-card></app-mushroom-card>
+        </div>
+        <div class="result">
+          <app-mushroom-card></app-mushroom-card>
+        </div>
+        <div class="result">
+          <app-mushroom-card></app-mushroom-card>
+        </div>
+      </ion-content>
+    </div>
+  </div>
+</section>
