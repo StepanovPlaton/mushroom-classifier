@@ -1,4 +1,4 @@
-<ion-card class="card">
+<ion-card class="card" (click)="openModal()">
   <div [ngClass]="{ 
     'image_wrapper': !!mushroom, 
     'image_notfound_wrapper': !mushroom 
@@ -22,8 +22,8 @@
     </ion-card-title>
   </ion-card-header>
 
-  <ion-card-content *ngIf="!!mushroom" class="content">
-    <span *ngIf="size !== 'small'" class="item">
+  <ion-card-content *ngIf="!!mushroom && size !== 'small'" class="content">
+    <span class="item">
       {{ "Eatable" | translate }}:
       <img
         class="eatable_image" 

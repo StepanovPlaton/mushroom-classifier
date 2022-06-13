@@ -16,6 +16,24 @@
         {{ "Catalog" | translate }}
       </span>
     </div>
+    <div class="language_choose">
+      <img [src]="currentLangIcon" id="choose_lang_modal"/>
+      <ion-modal
+        #chooseLang
+        trigger="choose_lang_modal"
+      >
+        <ng-template>
+          <ion-list class="lang_list">
+            <ion-item (click)="setLang('ru')" class="lang_item">
+              <img [src]="RUSSIAN" class="lang_icon"/>
+            </ion-item>
+            <ion-item (click)="setLang('en')" class="lang_item">
+              <img [src]="ENGLISH" class="lang_icon"/>
+            </ion-item>
+          </ion-list>
+        </ng-template>
+      </ion-modal>
+    </div>
   </div>
 </ion-header>
 <ion-content class="content_wrapper">

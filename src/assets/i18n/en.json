@@ -1,0 +1,15 @@
+{
+    "Main": "Main",
+    "Recognize": "Recognize",
+    "Catalog": "Catalog",
+    "Recognize mushroom": "Recognize mushroom",
+    "Mushroom not found": "Mushroom not found",
+    "Select file": "Select file",
+    "Upload a photo of a mushroom to recognize it": "Upload a photo of a mushroom to recognize it",
+    "Too many files. Choose one photo": "Too many files. Choose one photo",
+    "File size is too large": "File size is too large",
+    "Failed to upload file": "Failed to upload file",
+    "Loading": "Loading",
+    "Description": "Description",
+    "Eatable": "Eatable"
+}

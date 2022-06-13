@@ -17,3 +17,10 @@
 body {
     user-select: none;
 }
+
+.mushroom-details-modal {
+    --height: 400px;
+    --width: 800px;
+    --background: rgb(40, 40, 40);
+    --border-radius: 24px;
+}

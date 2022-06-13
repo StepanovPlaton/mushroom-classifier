@@ -27,12 +27,15 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 300px;
+        width: 350px;
         padding-right: 48px;
 
-        .page {
-            a {
-                pointer-events: none;
+        .language_choose {
+            width: 50px;
+            display: flex;
+            align-items: center;
+            img {
+                height: 40px;
             }
         }
     }
@@ -50,4 +53,27 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.choose-lang-modal {
+    --background: rgba(0, 0, 0, 0);
+    --height: 100px;
+    --width: 75px;
+    border-radius: 12px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: 50px;
+    padding-right: 20px;
+
+    .lang_list {
+        padding: 0;
+        border-radius: 6px;
+        .lang_item {
+            --background: rgb(40, 40, 40);
+            border: 1px inset black;
+            .lang_icon {
+                height: 40px;
+            }
+        }
+    }
 }

@@ -8,3 +8,4 @@ export const SUPPORTED_FILE_TYPES = [
   ];
 export const DISABLE_WARNING_TIMEOUT = 5; // in sec 
 export const MAX_FILE_SIZE = 3; //Mb
+export const DEFAULT_LANGUAGE = "ru";

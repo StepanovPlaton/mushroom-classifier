@@ -1,7 +1,7 @@
 <section class="recognize_wrapper">
   <div class="recognize">
     <div class="recognize__image">
-      <div class="dotted_border">
+      <div class="dotted_border" *ngIf="!uploadedImageBase64; else uploadedImage">
         <div class="upload_welcome">
           <h2 class="welcome">
             {{ message | translate }}
@@ -40,6 +40,9 @@
           </h2>
         </div>
       </div>
+      <ng-template #uploadedImage>
+        <img [src]="uploadedImageBase64" class="uploaded-image"/>
+      </ng-template>
     </div>
     <div class="recognize__result">
       <ion-content class="results">

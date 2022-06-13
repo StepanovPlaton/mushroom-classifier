@@ -1,9 +1,12 @@
 <section class="catalog_wrapper">
   <ion-grid class="catalog">
-    <ion-row *ngFor="let row of table">
-      <ng-container *ngFor="let item of row">
+    <ion-row *ngFor="let row of mushroomGrid">
+      <ng-container *ngFor="let mushroom of row">
         <ion-col style="padding:5px;">
-          <app-mushroom-card></app-mushroom-card>
+          <app-mushroom-card
+            size="small"
+            [mushroom]="mushroom"
+          ></app-mushroom-card>
         </ion-col>
       </ng-container>
     </ion-row>

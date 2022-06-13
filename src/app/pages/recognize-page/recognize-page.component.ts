@@ -22,6 +22,8 @@ export class RecognizePageComponent implements OnInit {
   readonly welcomeMessage: string = "Upload a photo of a mushroom to recognize it"
   message: string = this.welcomeMessage;
 
+  uploadedImageBase64: string = "";
+
   constructor(
     private readonly translateService: TranslateService,
     private readonly cdr: ChangeDetectorRef,
@@ -76,7 +78,7 @@ export class RecognizePageComponent implements OnInit {
       const reader = new FileReader();
       this.message = this.translateService.instant('Loading');
       reader.onloadend = () => {
-        // base64 = reader.result?.toString()
+        this.uploadedImageBase64 = reader.result?.toString() as string
         this.message = file.name
         this.cdr.markForCheck();
       };

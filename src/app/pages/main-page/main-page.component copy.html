@@ -1,20 +1,16 @@
-<div 
-  class="main-page_wrapper" 
-  #mainPageWrapper
-  (scroll)="onPageScroll($event)"
->
+<section class="main-page_wrapper" #mainPageWrapper>
   <div class="content">
     <div class="content__cards">
       <div class="card card_left">
         <app-mushroom-card
           size="medium"
-          [mushroom]="mushroomsOfTheDay ? mushroomsOfTheDay[0] : null"
+          [mushroom]="mushroom"
         ></app-mushroom-card>
       </div>
       <div class="card card_right">
         <app-mushroom-card
           size="medium"
-          [mushroom]="mushroomsOfTheDay ? mushroomsOfTheDay[1] : null"
+          [mushroom]="mushroom"
         ></app-mushroom-card>
       </div>
     </div>
@@ -34,5 +30,5 @@
   <div class="navigate">
     <img [src]=""/>
   </div>
-</div>
+</section>
 

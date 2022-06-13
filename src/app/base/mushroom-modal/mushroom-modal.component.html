@@ -1,0 +1,35 @@
+<div class="mushroom-modal_wrapper">
+  <div class="modal_header">
+    <h2 class="mushroom_name">{{ mushroom?.name }}</h2>
+  </div>
+  <div class="modal_content">
+    <div class="image_block">
+      <div class="image_wrapper">
+        <img [src]="mushroom?.mainPicture"/>
+      </div>
+    </div>
+    <ion-content class="description_block">
+      <ion-list class="description_list">
+        <ion-item class="description_item">
+            <span class="item_text">
+              {{ "Description" | translate }}: 
+            </span>
+            <span class="item_text">
+              {{ mushroom?.description }}
+            </span>
+        </ion-item>
+        <ion-item class="description_item">
+          <span class="item_text">
+            {{ "Eatable" | translate }}: 
+          </span>
+          <span class="item_text">
+            <img
+              class="eatable_image" 
+              [src]="mushroom?.eatable ? CHECK : CROSS"
+            />
+          </span>
+      </ion-item>
+      </ion-list>
+    </ion-content>
+  </div>
+</div>

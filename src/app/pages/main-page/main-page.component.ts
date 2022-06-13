@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MUSHROOM } from 'src/app/shared/consts/image.consts';
 import { IMushroom } from 'src/app/shared/models/mushroom.model';
+import { MushroomInfoService } from 'src/app/shared/services/mushroom-info.service';
 
 @Component({
   selector: 'app-main-page',
@@ -9,18 +10,21 @@ import { IMushroom } from 'src/app/shared/models/mushroom.model';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  mushroom: IMushroom;
+  @ViewChild("mainPageWrapper") mainPageWrapper: ElementRef | undefined;
+
+  pageOnTop: boolean = true;
+
+  mushroomsOfTheDay: IMushroom[] | undefined;
 
   constructor(
     private readonly router: Router,
+    private readonly mushroomInfoService: MushroomInfoService,
   ) { 
-    this.mushroom = {
-      name: "Гриб",
-      mainPicture: MUSHROOM,
-      additionalPictures: [],
-      eatable: false,
-      description: "Очень подробное описание гриба"
-    }
+    this.mushroomInfoService.getMushroomsOfTheDay().subscribe(mushrooms => {
+      if(mushrooms.length === 2) {
+        this.mushroomsOfTheDay = mushrooms
+      }
+    })
   }
 
   ngOnInit() {
@@ -29,5 +33,9 @@ export class MainPageComponent implements OnInit {
 
   navigate(path: string[]) {
     this.router.navigate(path)
+  }
+
+  onPageScroll(event: any) {
+    console.log(event)
   }
 }
