@@ -10,7 +10,7 @@ export class MushroomInfoService {
 
     constructor(
         private http: HttpClient,
-    ) { 
+    ) {
     }
 
     getMushroomInfo(mushroomId: number): Observable<IMushroom>  {
