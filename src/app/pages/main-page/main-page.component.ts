@@ -10,8 +10,6 @@ import { MushroomInfoService } from 'src/app/shared/services/mushroom-info.servi
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  @ViewChild("mainPageWrapper") mainPageWrapper: ElementRef | undefined;
-
   pageOnTop: boolean = true;
 
   mushroomsOfTheDay: IMushroom[] | undefined;
@@ -33,9 +31,5 @@ export class MainPageComponent implements OnInit {
 
   navigate(path: string[]) {
     this.router.navigate(path)
-  }
-
-  onPageScroll(event: any) {
-    console.log(event)
   }
 }

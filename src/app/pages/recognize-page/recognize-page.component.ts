@@ -79,6 +79,7 @@ export class RecognizePageComponent implements OnInit {
       this.message = this.translateService.instant('Loading');
       reader.onloadend = () => {
         this.uploadedImageBase64 = reader.result?.toString() as string
+        console.log(this.uploadedImageBase64)
         this.message = file.name
         this.cdr.markForCheck();
       };
