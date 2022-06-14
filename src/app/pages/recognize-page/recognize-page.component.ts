@@ -1,9 +1,8 @@
 import { ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
 import { DISABLE_WARNING_TIMEOUT, MAX_FILE_SIZE, SUPPORTED_FILE_TYPES } from 'src/app/shared/consts/settings.consts';
 import { TranslateService } from '@ngx-translate/core';
-import { interval, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
+import { IMushroom } from 'src/app/shared/models/mushroom.model';
+import { MushroomRecognizeService } from 'src/app/shared/services/mushruum-recognize.service';
 
 @Component({
   selector: 'app-recognize-page',
@@ -19,6 +18,8 @@ export class RecognizePageComponent implements OnInit {
     uploadFail: false,
   }
 
+  recognizedMushrooms: IMushroom[] | null = null;
+
   readonly welcomeMessage: string = "Upload a photo of a mushroom to recognize it"
   message: string = this.welcomeMessage;
 
@@ -27,6 +28,7 @@ export class RecognizePageComponent implements OnInit {
   constructor(
     private readonly translateService: TranslateService,
     private readonly cdr: ChangeDetectorRef,
+    private readonly mushroomRecognizeService: MushroomRecognizeService,
   ) { }
 
   ngOnInit() {
@@ -80,6 +82,10 @@ export class RecognizePageComponent implements OnInit {
       reader.onloadend = () => {
         this.uploadedImageBase64 = reader.result?.toString() as string
         console.log(this.uploadedImageBase64)
+        this.mushroomRecognizeService.recognizeImage(this.uploadedImageBase64)
+        .subscribe(mushrooms => {
+          this.recognizedMushrooms = mushrooms
+        })
         this.message = file.name
         this.cdr.markForCheck();
       };

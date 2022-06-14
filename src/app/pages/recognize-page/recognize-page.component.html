@@ -46,14 +46,11 @@
     </div>
     <div class="recognize__result">
       <ion-content class="results">
-        <div class="result">
-          <app-mushroom-card></app-mushroom-card>
-        </div>
-        <div class="result">
-          <app-mushroom-card></app-mushroom-card>
-        </div>
-        <div class="result">
-          <app-mushroom-card></app-mushroom-card>
+        <div class="result" *ngFor="let mushroom of recognizedMushrooms">
+          <app-mushroom-card
+            size="small"
+            [mushroom]="mushroom"
+          ></app-mushroom-card>
         </div>
       </ion-content>
     </div>
