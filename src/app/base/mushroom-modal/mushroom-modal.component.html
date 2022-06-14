@@ -5,14 +5,14 @@
   <div class="modal_content">
     <div class="image_block">
       <div class="image_wrapper">
-        <img [src]="mushroom?.mainPicture"/>
+        <img [src]= "'/api'+ mushroom?.mainPicture"/>
       </div>
     </div>
     <ion-content class="description_block">
       <ion-list class="description_list">
         <ion-item class="description_item">
             <span class="item_text">
-              {{ "Description" | translate }}: 
+              {{ "Description" | translate }}:
             </span>
             <span class="item_text">
               {{ mushroom?.description }}
@@ -20,11 +20,11 @@
         </ion-item>
         <ion-item class="description_item">
           <span class="item_text">
-            {{ "Eatable" | translate }}: 
+            {{ "Eatable" | translate }}:
           </span>
           <span class="item_text">
             <img
-              class="eatable_image" 
+              class="eatable_image"
               [src]="mushroom?.eatable ? CHECK : CROSS"
             />
           </span>

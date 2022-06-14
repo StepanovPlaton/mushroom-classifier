@@ -17,9 +17,9 @@
     />
   </div>
   <ion-card-header class="header" >
-    <ion-card-title class="header__title">
+    <ion-card-subtitle class="header__title">
       {{ !!mushroom ? mushroom.name : ("Mushroom not found" | translate) }}
-    </ion-card-title>
+    </ion-card-subtitle>
   </ion-card-header>
 
   <ion-card-content *ngIf="!!mushroom && size !== 'small'" class="content">

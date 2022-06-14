@@ -36,11 +36,12 @@
             width: 60%;
             height: 100%;
             --background: rgb(40, 40, 40);
-    
+
             .description_list {
                 padding: 0;
                 --background: rgb(40, 40, 40);
                 .description_item {
+                    white-space: pre-wrap;
                     --background: rgb(40, 40, 40);
                     display: flex;
                     width: 520px;
